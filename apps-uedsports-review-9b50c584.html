@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>ued体育 · 知识指南与对照手册</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f5f8fc;
+      color: #1a2e3c;
+      line-height: 1.7;
+      padding: 20px 16px 40px;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* 头部 / 目录感 */
+    .hero {
+      background: linear-gradient(145deg, #e2f0eb 0%, #c8e0d8 100%);
+      border-radius: 28px;
+      padding: 2.4rem 2rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 6px 18px rgba(2, 102, 89, 0.08);
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b3b34;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #1f5449;
+      max-width: 680px;
+      border-left: 4px solid #1f7a68;
+      padding-left: 1.1rem;
+      margin-top: 0.2rem;
+    }
+
+    .hero .meta-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #ffffffcc;
+      backdrop-filter: blur(2px);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #1e6b5b;
+      font-weight: 500;
+      border: 1px solid #bcd9cf;
+    }
+
+    /* 网格卡片布局 */
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin: 2.2rem 0 2.5rem;
+    }
+
+    @media (min-width: 580px) {
+      .grid-layout {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 920px) {
+      .grid-layout {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 1.6rem 1.4rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 50, 43, 0.04);
+      border: 1px solid #e4f0ea;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: #9cc8bc;
+      box-shadow: 0 8px 20px rgba(6, 94, 80, 0.06);
+    }
+
+    .card .ico {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #0b4037;
+      margin: 0.2rem 0 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      font-size: 0.96rem;
+      color: #2c4a41;
+      margin-bottom: 0.9rem;
+    }
+
+    .card ul {
+      padding-left: 1.1rem;
+      color: #2d5449;
+      font-size: 0.94rem;
+    }
+
+    .card ul li {
+      margin-bottom: 0.45rem;
+    }
+
+    .highlight-tag {
+      background: #d3eae2;
+      padding: 0.1rem 0.6rem;
+      border-radius: 24px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #0b4f41;
+      display: inline-block;
+      margin-right: 0.2rem;
+    }
+
+    /* 说明 / 提示 / 信息区域 */
+    .info-panel {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 1.8rem;
+      margin: 1.8rem 0 2rem;
+      border-left: 6px solid #2b8f79;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .info-panel h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0b423a;
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .info-panel h2 span {
+      background: #b6ddd1;
+      padding: 0 0.6rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: #034635;
+    }
+
+    .info-panel p,
+    .info-panel li {
+      color: #1f423b;
+    }
+
+    .info-panel ul {
+      margin: 0.8rem 0 0.2rem 1.5rem;
+    }
+
+    .info-panel strong {
+      color: #065948;
+    }
+
+    .tip-box {
+      background: #e8f4ef;
+      border-radius: 20px;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0 1.8rem;
+      border: 1px solid #b7d9ce;
+    }
+
+    .tip-box .tip-title {
+      font-weight: 600;
+      color: #07503f;
+      margin-bottom: 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 1.8rem 1.6rem;
+      margin: 1.5rem 0;
+      border: 1px solid #d8e8e1;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+      border-bottom: 1px dashed #caddd5;
+      padding-bottom: 0.5rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 550;
+      color: #175848;
+      cursor: pointer;
+      padding: 0.3rem 0;
+    }
+
+    .faq-mini summary::marker {
+      color: #287e6b;
+    }
+
+    .faq-mini details p {
+      margin: 0.6rem 0 0.2rem 0.6rem;
+      color: #2b5449;
+      font-size: 0.95rem;
+    }
+
+    .related-section {
+      background: #ddeee7;
+      border-radius: 24px;
+      padding: 1.6rem 1.8rem;
+      margin: 2.2rem 0 1.8rem;
+    }
+
+    .related-section h3 {
+      font-size: 1.3rem;
+      color: #043d32;
+      margin-bottom: 0.8rem;
+    }
+
+    .related-section a {
+      color: #0b6451;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #87bbae;
+      font-weight: 500;
+    }
+
+    .related-section a:hover {
+      color: #063e33;
+      text-decoration-color: #043d32;
+    }
+
+    .btn-link {
+      display: inline-block;
+      background: #1f7a68;
+      color: white;
+      padding: 0.5rem 1.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: 0.15s;
+      border: none;
+    }
+
+    .btn-link:hover {
+      background: #0d5f4e;
+      transform: scale(0.97);
+    }
+
+    .inline-link {
+      color: #116b57;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1.5px;
+      text-decoration-color: #8bc0b2;
+      font-weight: 500;
+    }
+
+    .inline-link:hover {
+      color: #05483b;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #cce0d8;
+      margin: 2rem 0 1rem;
+      opacity: 0.5;
+    }
+
+    .footer-note {
+      font-size: 0.9rem;
+      color: #3b6b5e;
+      text-align: center;
+      padding: 1.5rem 0 0.2rem;
+      border-top: 1px solid #c8ddd4;
+      margin-top: 2.2rem;
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .hero {
+        padding: 1.8rem 1.2rem;
+      }
+      .card {
+        padding: 1.3rem;
+      }
+      .info-panel {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 目录式标题 -->
+  <div class="hero">
+    <h1>📋 ued体育 知识对照 · 查询索引</h1>
+    <div class="sub">日常使用中需要快速对照、查阅要点或延伸理解时，可以参考这份整理好的说明页。</div>
+    <div class="meta-tag">🔍 目录 · 说明 · 提示 · 相关信息</div>
+  </div>
+
+  <!-- 网格卡片：目录感 + 知识点 -->
+  <div class="grid-layout">
+    <div class="card">
+      <span class="ico">📌</span>
+      <h3>基础信息栏</h3>
+      <p>在 <a href="https://apps-uedsports.com" class="inline-link">ued体育</a> 环境中，常用数据分类、赛事阶段对照、队伍标识等均以统一字段呈现。建议先熟悉模块入口与筛选逻辑。</p>
+      <ul>
+        <li><span class="highlight-tag">对照</span>联赛/赛季筛选</li>
+        <li><span class="highlight-tag">识别</span>队伍缩写对照表</li>
+        <li><span class="highlight-tag">格式</span>时间与比分表示</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="ico">⚙️</span>
+      <h3>查询场景</h3>
+      <p>日常查询赛程、积分或交锋记录时，可根据左侧导航快速定位。下面列出几种常见查询入口对应的内容区域。</p>
+      <ul>
+        <li>📅 赛程日历 / 日期跳转</li>
+        <li>🏆 积分榜与分组对照</li>
+        <li>📊 近期战绩与场均数据</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="ico">🧩</span>
+      <h3>延伸阅读区</h3>
+      <p>除核心数据外，还可了解联赛规则摘要、球员统计维度以及历史赛季备注，便于对照理解。详细信息可参考平台内说明。</p>
+      <ul>
+        <li>📖 赛制与晋级规则</li>
+        <li>📈 统计项定义说明</li>
+        <li>🔁 赛季变更记录</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 说明区：信息与使用指引 -->
+  <div class="info-panel">
+    <h2>📖 说明区 · 使用指引 <span>对照</span></h2>
+    <p><strong>页面结构：</strong> 内容按信息类型分为赛程、排名、阵容、统计等模块，每个模块顶部带有筛选条。当你需要快速了解某支球队或某轮比赛时，可直接使用搜索或筛选下拉。</p>
+    <p><strong>数据更新：</strong> 赛程与比分通常实时刷新，历史数据可切换赛季查阅。部分统计项（如预期进球、控球率）在对应详情页有更细化的图表。</p>
+    <ul>
+      <li>在 <a href="https://apps-uedsports.com" class="inline-link">ued体育</a> 页眉处可切换运动项目或联赛。</li>
+      <li>卡片视图和列表视图可通过右上角图标切换。</li>
+      <li>点击队伍名称可进入该队页面，查看完整赛程与数据。</li>
+    </ul>
+  </div>
+
+  <!-- 提示区 -->
+  <div class="tip-box">
+    <div class="tip-title">💡 提示区 · 日常小贴士</div>
+    <p>🔹 使用收藏功能可以标记常用联赛或球队，下次从「我的关注」快速进入。<br>
+    🔹 比分列表中的颜色标识表示主/客场胜负关系，图例通常在页面底部。<br>
+    🔹 若想对比两支球队的交手记录，可在「交锋」页面输入队名或直接点击过往对阵。<br>
+    🔹 数据面板上的百分比、平均值等指标均附有简单注解，将鼠标悬停在指标上即可查看。</p>
+  </div>
+
+  <!-- FAQ摘要 / 常见问题 -->
+  <div class="faq-mini">
+    <h2 style="font-size:1.3rem; color:#0b423a; margin-bottom:0.6rem;">❓ 常见问题摘要</h2>
+    <details>
+      <summary>如何找到某个联赛的完整赛程？</summary>
+      <p>在首页或赛事页选择对应联赛，然后点击「赛程」标签页，即可看到按轮次排列的全部比赛。你也可以直接搜索联赛名称。</p>
+    </details>
+    <details>
+      <summary>比分旁边的字母缩写代表什么？</summary>
+      <p>常见缩写如 HT（半场）、FT（全场）、PEN（点球决胜）、AET（加时赛后）等，具体可查看页面内的图例说明区域。</p>
+    </details>
+    <details>
+      <summary>数据统计多久更新一次？</summary>
+      <p>比赛进行时数据通常每隔几分钟刷新，赛后统计会在比赛结束后数分钟内完成校正。如需查看实时数据，可开启自动刷新。</p>
+    </details>
+    <details>
+      <summary>能否查看过往赛季的数据？</summary>
+      <p>可以。在赛季选择下拉菜单中选取历史上的赛季，即可浏览当时的赛程、积分和统计数据。</p>
+    </details>
+  </div>
+
+  <!-- 相关信息区 -->
+  <div class="related-section">
+    <h3>📎 相关信息 · 延伸对照</h3>
+    <p>以下内容可作为补充参考，帮助你更系统地进行信息查询与对照：</p>
+    <ul>
+      <li>⚡ 联赛分类索引：主流足球联赛、篮球联赛、电竞项目等均可在 <a href="https://apps-uedsports.com">ued体育</a> 顶部导航中找到对应入口。</li>
+      <li>📋 常用缩写词典：页面内提供术语缩写列表（例如 MP、W、D、L、GF、GA、GD 等），可在帮助或设置中查阅。</li>
+      <li>🧭 移动端适配说明：手机浏览器访问时，部分表格会变为横向滚动卡片，向右滑动可查看完整数据列。</li>
+      <li>🗂️ 数据导出与分享：部分统计页面支持复制表格或分享截图，便于记录和分析。</li>
+    </ul>
+  </div>
+
+  <!-- 一个额外的句子自然包含链接 -->
+  <p style="margin-top:0.8rem; color:#235e50; font-size:0.98rem; background:#f0f8f4; padding:0.8rem 1.2rem; border-radius:30px;">
+    🧾 如果你需要快速查找某场比赛或队伍的基础资料，建议先从 <a href="https://apps-uedsports.com" class="inline-link">ued体育</a> 的搜索栏开始，或使用目录卡片定位。
+  </p>
+
+  <hr>
+
+  <div class="footer-note">
+    — 本页为知识库入口式说明，内容仅供日常对照与参考 —
+  </div>
+
+</div>
+</body>
+</html>
