@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乐思体育 · 站点介绍与可信说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9fafb;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #1e293b;
+      line-height: 1.8;
+      padding: 2rem 1.25rem;
+    }
+
+    .page {
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+
+    /* 窄正文宽度 */
+    .content {
+      max-width: 36rem;
+      margin: 0 auto;
+    }
+
+    /* hero 极简 */
+    .hero {
+      padding: 2.5rem 0 1.5rem 0;
+      border-bottom: 1px solid #e5e7eb;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      color: #0c1829;
+      line-height: 1.3;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero .byline {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-top: 0.4rem;
+      font-weight: 380;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1.2rem;
+      color: #7e8a98;
+      font-size: 0.85rem;
+      margin: 0.75rem 0 1.8rem 0;
+      border-bottom: 1px dashed #e5e7eb;
+      padding-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 520;
+      margin: 2.2rem 0 0.8rem 0;
+      color: #1b2b3f;
+      letter-spacing: -0.01em;
+      border-left: 3px solid #94a3b8;
+      padding-left: 0.9rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1.8rem 0 0.5rem 0;
+      color: #2c3e50;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      color: #1f2937;
+      text-align: justify;
+    }
+
+    .inset-quote {
+      background: #f1f4f8;
+      padding: 1.2rem 1.5rem;
+      border-radius: 12px;
+      margin: 1.8rem 0;
+      font-style: normal;
+      color: #2c3e50;
+      border-left: 4px solid #b0bec5;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .inset-quote::before {
+      content: "📌 提醒 · ";
+      font-weight: 500;
+      color: #546e7a;
+    }
+
+    .visit-sentence {
+      background: #ffffff;
+      padding: 1.6rem 2rem;
+      margin: 2.5rem 0 1.8rem 0;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0,0,0,0.03);
+      border: 1px solid #eef1f4;
+      text-align: center;
+    }
+
+    .visit-sentence p {
+      margin-bottom: 0.3rem;
+      font-size: 1.05rem;
+      color: #1f2a3f;
+    }
+
+    .visit-sentence a {
+      color: #1a4972;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1.5px solid #bcccdc;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .visit-sentence a:hover {
+      color: #0b2b46;
+      border-bottom-color: #1a4972;
+    }
+
+    .faq-mini {
+      margin-top: 2.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e2e6ea;
+    }
+
+    .faq-item {
+      margin-bottom: 1.1rem;
+    }
+
+    .faq-item strong {
+      display: inline-block;
+      font-weight: 520;
+      color: #1e2a3a;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-item p {
+      margin: 0.1rem 0 0.6rem 0;
+      color: #3b4b5e;
+      font-size: 0.95rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 2rem 0 0.5rem 0;
+    }
+
+    .footer-note {
+      margin: 3rem 0 1rem 0;
+      font-size: 0.8rem;
+      color: #8b99a9;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .inset-quote {
+        padding: 1rem 1.2rem;
+      }
+      .visit-sentence {
+        padding: 1.2rem 1rem;
+      }
+      .article-meta {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="content">
+
+      <!-- 极简 hero -->
+      <header class="hero">
+        <h1>乐思体育 · 从一处站点说起</h1>
+        <div class="byline">一篇关于背景、可信与边界的叙述</div>
+      </header>
+
+      <!-- 文章元信息 -->
+      <div class="article-meta">
+        <span>📄 概述</span>
+        <span>🕒 最近更新 · 2025</span>
+        <span>🏷️ 站点介绍 / 可信说明</span>
+      </div>
+
+      <!-- 导语段落 -->
+      <p>
+        如果你正在寻找一个与体育相关的信息聚合或服务平台，或许已经遇到过「乐思体育」这个名字。互联网上的体育类站点并不少，但真正能做到结构清晰、信息可靠且持续更新的，其实并没有那么多。这里想从我们自己的视角，简单介绍一下这个站点的定位、它所承载的内容逻辑，以及你该如何看待它。
+      </p>
+
+      <!-- 第一段：站点介绍角度 -->
+      <h2>一个专注于体育内容的站点</h2>
+      <p>
+        乐思体育并不是那种追求流量与短期曝光的门户。它更像一个经过梳理的资料与功能集合——从赛事动态、训练方法到运动常识，你能在其中找到不少经过筛选的内容。站点的设计偏向实用，没有过多冗余的装饰，信息层级也比较直观。无论是业余爱好者还是有一定运动基础的人，都可以在这里找到一些值得停留的页面。
+      </p>
+
+      <h3>内容特点与组织方式</h3>
+      <p>
+        目前网站涵盖的内容大致包括：基础运动科学、常见项目技巧分析、运动康复与防护提示，以及一些赛事背景介绍。每篇文章或是工具页面都尽量保持克制，不夸大效果，也不贩卖焦虑。我们认为，体育领域的知识本身已经足够有趣，不需要额外包装。也正因如此，这里的文字读起来可能会比较平实，但恰恰是这种平实，让信息更可信。
+      </p>
+
+      <!-- 引用/提醒块 -->
+      <div class="inset-quote">
+        任何网站都有其信息边界。乐思体育提供的内容仅供参考与学习，不能替代专业教练或医生的当面建议。在开始新的训练或使用某些建议前，请结合自身情况判断。
+      </div>
+
+      <!-- 第二段：可信说明角度 -->
+      <h2>关于可信与中立</h2>
+      <p>
+        在信息过载的时代，「可信」本身就是一种稀缺品。乐思体育在引用外部研究、数据或案例时，会注明来源（或至少说明参考背景）。同时，网站没有嵌入那些夸张的广告或诱导性弹窗，这一点在今天的体育类站点中并不常见。我们相信，只有尊重访问者的判断力，才能建立长期的信任。
+      </p>
+      <p>
+        当然，这并不意味着这里的内容绝对正确或没有疏漏。体育科学本身就在不断更新，旧的方法可能被新研究推翻，不同流派的观点也时有碰撞。因此，保持开放心态、交叉验证，永远是明智的做法。
+      </p>
+
+      <!-- 自然嵌入链接的访问句，放在带背景的卡片里 -->
+      <div class="visit-sentence">
+        <p>如果你想进一步了解上述内容，欢迎访问 <a href="https://portal-lesisports.com">乐思体育</a>，亲自浏览站点的结构与文章。</p>
+        <p style="font-size: 0.9rem; color: #5e6f82; margin-top: 0.3rem;">直接通过域名即可抵达，无需任何中介。</p>
+      </div>
+
+      <!-- 场景 + 小 FAQ 摘要 -->
+      <h2>常见疑问简述</h2>
+
+      <div class="faq-mini">
+        <div class="faq-item">
+          <strong>这个网站适合哪些人？</strong>
+          <p>对运动有兴趣的普通人、业余训练者、体育爱好者、以及需要基础参考资料的学生或教练。不适合寻求医疗诊断或极端速成方案的人群。</p>
+        </div>
+        <div class="faq-item">
+          <strong>内容更新频率如何？</strong>
+          <p>没有固定的发布周期，但会持续补充和修订。比起频繁更新，更注重信息的准确性与实用性。</p>
+        </div>
+        <div class="faq-item">
+          <strong>是否有付费或会员限制？</strong>
+          <p>目前站内大部分内容对访问者免费开放，没有设置隐藏付费墙。未来的变动会提前说明。</p>
+        </div>
+        <div class="faq-item">
+          <strong>如何辨别信息是否过时？</strong>
+          <p>建议查看文章或页面的标注日期。同时，如果发现明显偏差，欢迎通过适当渠道反馈（站点内可能留有联系方式）。</p>
+        </div>
+      </div>
+
+      <!-- 结尾段，叙述感 -->
+      <p style="margin-top: 2.2rem;">
+        最后说一点个人的感受：做体育内容的人往往有两种倾向，要么过于技术化，要么过于鸡汤化。乐思体育选择了一条中间道路——它承认运动的复杂性，但也相信普通人值得拥有干净、直接的信息。如果你认同这种理念，或许这里会成为你常来的一个角落。
+      </p>
+
+      <hr />
+
+      <div class="footer-note">
+        乐思体育 · 站点说明 ｜ 保持阅读与运动
+      </div>
+
+    </div><!-- .content -->
+  </div><!-- .page -->
+</body>
+</html>
