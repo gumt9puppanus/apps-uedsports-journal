@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐思体育 | 聚焦运动场景的实用信息站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fef4e8 0%, #fde8d0 40%, #f9d5b0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+            color: #2d2a25;
+        }
+        .page-wrap {
+            max-width: 880px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* 卡片通用样式 */
+        .card {
+            background: #fffffffb;
+            backdrop-filter: blur(1px);
+            border-radius: 32px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 12px 28px -8px rgba(140, 85, 30, 0.18), 0 6px 12px -6px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s;
+            border: 1px solid rgba(255, 245, 235, 0.6);
+        }
+        .card:hover {
+            box-shadow: 0 18px 36px -12px rgba(120, 70, 20, 0.20);
+        }
+
+        /* Hero 区 */
+        .hero {
+            text-align: center;
+            padding: 3rem 2rem 2.8rem;
+            background: linear-gradient(135deg, #ffffff 0%, #fff6ec 100%);
+            border-radius: 48px 48px 32px 32px;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #6d4b2e;
+            margin-bottom: 1rem;
+        }
+        .hero .tagline {
+            font-size: 1.4rem;
+            color: #7e5f41;
+            font-weight: 400;
+            max-width: 480px;
+            margin: 0 auto 0.5rem;
+        }
+        .hero .subnote {
+            font-size: 1rem;
+            color: #8e735b;
+            border-top: 2px dashed #edd5bf;
+            padding-top: 1.2rem;
+            margin-top: 1.2rem;
+            display: inline-block;
+        }
+
+        /* 优势区 —— 三列卡片网格 */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .advantage-item {
+            background: #faf5ef;
+            border-radius: 24px;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            border: 1px solid #f0e0d0;
+        }
+        .advantage-item .emoji-badge {
+            font-size: 2.3rem;
+            display: block;
+            margin-bottom: 0.7rem;
+        }
+        .advantage-item h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #5c3f28;
+            margin-bottom: 0.4rem;
+        }
+        .advantage-item p {
+            font-size: 0.95rem;
+            color: #5f4b39;
+        }
+
+        /* 说明区 */
+        .explain-text {
+            font-size: 1.05rem;
+            color: #3a332a;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .explain-text strong {
+            color: #6d4b2e;
+        }
+        .explain-text a {
+            color: #a7612c;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #ecccb0;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .explain-text a:hover {
+            border-bottom-color: #a7612c;
+            color: #7b441e;
+        }
+
+        /* FAQ 摘要 */
+        .faq-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.8rem;
+        }
+        .faq-list li {
+            padding: 0.9rem 0.5rem 0.9rem 0;
+            border-bottom: 1px solid #ebded1;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.5rem 1rem;
+        }
+        .faq-list li:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #4d3827;
+            min-width: 5.5rem;
+        }
+        .faq-a {
+            color: #4f3e30;
+            flex: 1;
+        }
+
+        /* 底部链接区 */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem 1.8rem;
+            padding: 1.2rem 0.2rem;
+            background: transparent;
+            border-top: 1px solid #edd5bf;
+            margin-top: 0.4rem;
+        }
+        .footer-links a {
+            color: #7b552f;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.3rem 0.8rem;
+            border-radius: 40px;
+            background: rgba(255, 255, 245, 0.5);
+            backdrop-filter: blur(2px);
+            transition: background 0.2s, transform 0.1s;
+            border: 1px solid #e4cfba;
+            font-size: 0.95rem;
+        }
+        .footer-links a:hover {
+            background: #fff3e6;
+            border-color: #b8875f;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            body { padding: 1rem 0.8rem; }
+            .card { padding: 1.8rem 1.2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero .tagline { font-size: 1.2rem; }
+            .advantages-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .faq-list li { flex-direction: column; gap: 0.25rem; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .tagline { font-size: 1rem; }
+            .advantage-item { padding: 1.3rem 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- Hero 区域 -->
+    <div class="card hero">
+        <h1>乐思体育</h1>
+        <div class="tagline">把运动信息整理清楚，节省你的时间</div>
+        <div class="subnote">不论你是刚接触某项运动，还是想快速了解赛事动态</div>
+    </div>
+
+    <!-- 优势区：三个特点卡片 -->
+    <div class="advantages-grid">
+        <div class="advantage-item">
+            <span class="emoji-badge">🔍</span>
+            <h3>信息筛选</h3>
+            <p>从规则、装备到赛事日历，梳理出真正有用的部分，减少无效浏览。</p>
+        </div>
+        <div class="advantage-item">
+            <span class="emoji-badge">🧭</span>
+            <h3>场景导航</h3>
+            <p>按运动类型、参与角色、经验层次提供索引，更容易定位所需内容。</p>
+        </div>
+        <div class="advantage-item">
+            <span class="emoji-badge">📘</span>
+            <h3>轻量化参考</h3>
+            <p>不堆砌术语，用平实的语言解释运动概念，适合快速查阅。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：解释网站用途 + 嵌入链接 -->
+    <div class="card explain-text">
+        <p>很多运动相关的站点要么太深、要么太散。<strong>乐思体育</strong> 试图做一个中间层：把常见的运动项目、基础规则、参与方式以及安全提示整理成简洁的概述。你可以把它当作一个运动信息的“快速入口”。</p>
+        <p style="margin-top: 1.2rem;">例如，你想了解某项运动的计分逻辑、所需装备或常见术语，这里会给出经过整理的摘要，并附上进一步的资源指向。整个站点的内容围绕实用和清晰展开，没有广告干扰，也没有冗余的推销信息。</p>
+        <p style="margin-top: 1.4rem;">如果你希望直接浏览最新整理的内容，可以前往 <a href="https://index-lesisports.com">乐思体育</a> 的主页查看分类索引。我们也会不定期更新 FAQ 和运动小贴士。</p>
+    </div>
+
+    <!-- FAQ 摘要卡片 -->
+    <div class="card">
+        <h2 style="font-size: 1.4rem; font-weight: 600; color: #573f2e; margin-bottom: 1.2rem;">常见疑问 · 摘要</h2>
+        <ul class="faq-list">
+            <li>
+                <span class="faq-q">❓ 适合什么人？</span>
+                <span class="faq-a">想快速了解某项运动基础信息的成年人、家长、体育爱好者，以及需要写运动相关稿件的人。</span>
+            </li>
+            <li>
+                <span class="faq-q">❓ 内容来源？</span>
+                <span class="faq-a">基于公开的体育规则、官方手册以及经过核实的运动科普资料，不做主观预测或未经证实的建议。</span>
+            </li>
+            <li>
+                <span class="faq-q">❓ 是否收费？</span>
+                <span class="faq-a"><strong>乐思体育</strong> 目前完全免费，页面没有商业广告，也没有隐藏付费内容。</span>
+            </li>
+            <li>
+                <span class="faq-q">❓ 更新频率？</span>
+                <span class="faq-a">根据运动赛季和规则变动不定期补充新条目，每次更新会标注时间戳。</span>
+            </li>
+        </ul>
+        <p style="margin-top: 1rem; font-size: 0.95rem; color: #6b5846;">完整版 FAQ 请至 <a href="https://index-lesisports.com" style="color:#a7612c; font-weight:600; text-decoration:none; border-bottom:1px solid #ecccb0;">乐思体育</a> 浏览。</p>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <a href="https://index-lesisports.com">乐思体育</a>
+        <a href="#">运动分类</a>
+        <a href="#">术语表</a>
+        <a href="#">关于本站</a>
+    </div>
+    <p style="text-align: center; font-size: 0.8rem; color: #8a735d; margin-top: 1rem; padding-bottom: 1rem;">—— 让运动信息更易得 ——</p>
+</div>
+</body>
+</html>
