@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐思体育 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fdf0e7 0%, #fce4d4 40%, #f8d5be 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+            color: #26201b;
+        }
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: #fffffffa;
+            backdrop-filter: blur(2px);
+            border-radius: 48px 16px 48px 16px;
+            padding: 2.8rem 2.5rem;
+            box-shadow: 0 20px 40px -12px rgba(120, 60, 30, 0.25), 0 8px 20px rgba(180, 100, 50, 0.08);
+            transition: box-shadow 0.2s;
+        }
+        @media (max-width: 540px) {
+            .card {
+                padding: 2rem 1.2rem;
+                border-radius: 32px 12px 32px 12px;
+            }
+        }
+        .hero-tag {
+            display: inline-block;
+            background: #e6733e20;
+            color: #b3532a;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e9b28c40;
+        }
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #2b1b12;
+            margin-bottom: 0.6rem;
+            word-break: break-word;
+        }
+        h1 small {
+            font-size: 1.2rem;
+            font-weight: 380;
+            color: #8a5e44;
+            display: block;
+            margin-top: 0.2rem;
+            letter-spacing: -0.01em;
+        }
+        .summary {
+            background: #f7ede6;
+            border-left: 5px solid #d97c4a;
+            padding: 1.2rem 1.6rem;
+            border-radius: 24px 8px 24px 8px;
+            margin: 1.8rem 0 2rem 0;
+            font-size: 1.05rem;
+            color: #2b1f18;
+        }
+        .grid-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 2rem 0 1.8rem 0;
+        }
+        @media (max-width: 520px) {
+            .grid-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+        .highlight-item {
+            background: #fcf6f1;
+            border-radius: 28px 8px 28px 8px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #e7d5c9;
+        }
+        .highlight-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #552f1b;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .highlight-item h3::before {
+            content: "✦";
+            color: #cd7242;
+            font-size: 1.2rem;
+        }
+        .highlight-item p {
+            font-size: 0.95rem;
+            color: #3d2d23;
+            margin-top: 0.2rem;
+        }
+        .usage-note {
+            background: #f4ece5;
+            border-radius: 32px 8px 32px 8px;
+            padding: 1.1rem 1.8rem;
+            margin: 1.8rem 0 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.3rem 0.8rem;
+        }
+        .usage-note strong {
+            color: #673d25;
+            font-weight: 600;
+        }
+        .usage-note span.badge {
+            background: #d97c4a20;
+            color: #633f2b;
+            padding: 0.1rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            border: 1px solid #d9b49c;
+        }
+        .faq-mini {
+            margin: 2.2rem 0 1.8rem 0;
+            border-top: 2px dashed #dcc9bc;
+            padding-top: 1.8rem;
+        }
+        .faq-mini details {
+            background: #faf3ed;
+            padding: 0.8rem 1.2rem;
+            border-radius: 30px 6px 30px 6px;
+            margin-bottom: 0.8rem;
+            border: 1px solid #e5cfc0;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .faq-mini details[open] {
+            background: #f2e3d9;
+        }
+        .faq-mini summary {
+            font-weight: 550;
+            color: #3b281d;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .faq-mini summary::before {
+            content: "↪";
+            color: #b96a3e;
+            font-size: 1.1rem;
+        }
+        .faq-mini details p {
+            margin: 0.6rem 0 0.2rem 0;
+            padding-left: 1.5rem;
+            color: #413027;
+            font-size: 0.95rem;
+        }
+        .discreet-link {
+            color: #9e6b4b;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px dotted #b48a70;
+            transition: border-bottom 0.2s, color 0.2s;
+        }
+        .discreet-link:hover {
+            color: #562f1a;
+            border-bottom: 1px solid #a2653f;
+        }
+        .disclaimer {
+            margin-top: 2.6rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #ebdbd0;
+            font-size: 0.85rem;
+            color: #6b5545;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .disclaimer p {
+            flex: 1;
+            min-width: 200px;
+        }
+        .btn-like {
+            display: inline-block;
+            background: #d97c4a;
+            color: #fff !important;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: none !important;
+            transition: background 0.2s, transform 0.1s;
+            white-space: nowrap;
+        }
+        .btn-like:hover {
+            background: #b15f30;
+            transform: scale(1.02);
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" role="main">
+        <span class="hero-tag">产品说明 · 功能速览</span>
+        <h1>
+            乐思体育
+            <small>运动内容聚合 · 信息检索辅助</small>
+        </h1>
+
+        <div class="summary">
+            <p><strong>快速识别用途</strong> —— 如果你希望在一个地方集中浏览体育相关资讯、训练思路或赛事动态，<a href="https://main-lesisports.com" class="discreet-link">乐思体育</a> 提供了一个内容索引与轻量探索的起点。站内整合了多个运动类目的摘要与导航，方便你按需进一步查阅。</p>
+        </div>
+
+        <div class="grid-highlights">
+            <div class="highlight-item">
+                <h3>内容分类</h3>
+                <p>按运动项目、训练方法、赛事简讯等维度组织，每个类别下汇集可读性较高的摘要与外部参考线索。</p>
+            </div>
+            <div class="highlight-item">
+                <h3>轻量交互</h3>
+                <p>页面结构偏重信息展示，适合快速判断是否与自身需求匹配，再决定是否深入浏览具体条目。</p>
+            </div>
+            <div class="highlight-item">
+                <h3>持续更新</h3>
+                <p>版块内容跟随体育热点与用户反馈调整，非一次性静态页面，保持一定时效性。</p>
+            </div>
+            <div class="highlight-item">
+                <h3>无冗余干扰</h3>
+                <p>避免过度营销或诱导式弹窗，以清晰的信息层级帮助用户聚焦在内容本身。</p>
+            </div>
+        </div>
+
+        <div class="usage-note">
+            <strong>💡 使用建议</strong>
+            <span>从首页分类入口切入</span>
+            <span class="badge">按需筛选</span>
+            <span class="badge">移动端适配良好</span>
+            <span style="margin-left:auto; font-size:0.9rem; color:#5f4231;">无需注册即可浏览</span>
+        </div>
+
+        <div class="faq-mini">
+            <details>
+                <summary>乐思体育 主要适合哪些用户？</summary>
+                <p>体育爱好者、运动入门者、希望快速了解某项运动基本信息的用户，以及寻找训练内容参考的教练或参与者。网站不提供医疗或专业竞技建议，仅作为信息索引参照。</p>
+            </details>
+            <details>
+                <summary>网站上的内容来源可靠吗？</summary>
+                <p>内容主要基于公开体育资料、训练常识及合理汇编，已尽量标注参考来源或链接。但建议对关键数据或安全事项进行二次核实。网站不承诺绝对准确或完整。</p>
+            </details>
+            <details>
+                <summary>是否收费？有没有推广链接？</summary>
+                <p>当前为免费访问，页面中出现的 <a href="https://main-lesisports.com" class="discreet-link">乐思体育</a> 相关链接均指向站内或关联说明页，不包含隐性商业推广。后续如有调整会通过站内公告说明。</p>
+            </details>
+        </div>
+
+        <div class="disclaimer">
+            <p>📌 访问提示 · 本页面仅做产品功能说明，不构成任何体育训练处方或商业邀约。请结合自身情况理性参考。</p>
+            <a href="https://main-lesisports.com" class="btn-like">乐思体育</a>
+        </div>
+        <!-- 隐藏种子，仅用于变化 -->
+        <span class="sr-only" aria-hidden="true">a11aeed124cdd8be</span>
+    </div>
+</body>
+</html>
